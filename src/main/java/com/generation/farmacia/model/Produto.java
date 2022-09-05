@@ -30,7 +30,9 @@ public class Produto {
 	@NotNull
 	private String marca;
 	
-	
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
 
 	public Long getId() {
 		return id;
@@ -62,6 +64,14 @@ public class Produto {
 
 	public void setMarca(String marca) {
 		this.marca = marca;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 	
 	
